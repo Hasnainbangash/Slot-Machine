@@ -30,6 +30,26 @@ struct ContentView: View {
                 // MARK: - SLOT MACHINE
                 // MARK: - FOOTER
             } //: VSTACK
+            .overlay(
+                // RESET
+                Button(action: {
+                    print("Reset the game")
+                }) {
+                    Image(systemName: "arrow.2.circlepath.circle")
+                } //: BUTTON
+                .modifier(ButtonModifier())
+                , alignment: .topLeading
+            )
+            .overlay(
+                // INFO
+                Button(action: {
+                    print("Info View")
+                }) {
+                    Image(systemName: "info.circle")
+                } //: BUTTON
+                .modifier(ButtonModifier())
+                , alignment: .topTrailing
+            )
             .padding()
             .frame(maxWidth: 720)
             
