@@ -33,9 +33,7 @@ struct ContentView: View {
                         .multilineTextAlignment(.trailing)
                     
                     Text("100")
-                        .foregroundColor(Color.white)
-                        .font(.system(.title, design: .rounded))
-                        .fontWeight(.heavy)
+                        
                         .shadow(color: Color("ColorTransparentBlack"), radius: 0, x: 0, y: 3)
                         .layoutPriority(1)
                 } //: HSTACK
