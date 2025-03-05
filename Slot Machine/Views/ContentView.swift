@@ -36,13 +36,7 @@ struct ContentView: View {
                         .scoreNumberStyle()
                         .modifier(ScoreNumberModifier())
                 } //: HSTACK
-                .padding(.vertical, 4)
-                .padding(.horizontal, 16)
-                .frame(minWidth: 128)
-                .background(
-                    Capsule()
-                        .foregroundColor(Color("ColorTransparentBlack"))
-                )
+                .modifier(ScoreContainerModifier())
                 
                 // MARK: - SLOT MACHINE
                 // MARK: - FOOTER
