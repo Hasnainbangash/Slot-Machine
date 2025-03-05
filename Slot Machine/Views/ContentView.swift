@@ -33,7 +33,7 @@ struct ContentView: View {
                         .multilineTextAlignment(.trailing)
                     
                     Text("100")
-                        
+                        .scoreNumberStyle()
                         .shadow(color: Color("ColorTransparentBlack"), radius: 0, x: 0, y: 3)
                         .layoutPriority(1)
                 } //: HSTACK
