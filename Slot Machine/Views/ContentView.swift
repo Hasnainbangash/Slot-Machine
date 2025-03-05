@@ -29,8 +29,8 @@ struct ContentView: View {
                 // MARK: - SCORE
                 HStack {
                     Text("Your\nCoins".uppercased())
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 10, weight: .bold, design: .rounded))
+                        .scoreLabelStyle()
+                        .multilineTextAlignment(.trailing)
                     
                     Text("100")
                         .foregroundColor(Color.white)
