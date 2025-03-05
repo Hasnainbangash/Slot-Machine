@@ -15,8 +15,20 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             // MARK: - BACKGROUND
+            LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
             
             // MARK: - INTERFACE
+            VStack(alignment: .center, spacing: 5) {
+                Text("Hello, World!")
+                
+                // MARK: - HEADER
+                // MARK: - SCORE
+                // MARK: - SLOT MACHINE
+                // MARK: - FOOTER
+            } //: VSTACK
+            .padding()
+            .frame(maxWidth: 720)
             
             // MARK: - POPUP
         } //: ZSTACK
