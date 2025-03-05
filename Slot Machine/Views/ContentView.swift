@@ -34,8 +34,7 @@ struct ContentView: View {
                     
                     Text("100")
                         .scoreNumberStyle()
-                        .shadow(color: Color("ColorTransparentBlack"), radius: 0, x: 0, y: 3)
-                        .layoutPriority(1)
+                        .modifier(ScoreNumberModifier())
                 } //: HSTACK
                 .padding(.vertical, 4)
                 .padding(.horizontal, 16)
