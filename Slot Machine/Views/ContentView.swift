@@ -247,6 +247,7 @@ struct ContentView: View {
             )
             .padding()
             .frame(maxWidth: 720)
+            .blur(radius: $showingModel.wrappedValue ? 5 : 0, opaque: false)
             
             // MARK: - POPUP
         } //: ZSTACK
