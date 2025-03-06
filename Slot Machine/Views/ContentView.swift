@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     // MARK: - PROPERTIES
     
+    let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
+    
     @State private var showingInfoView: Bool = false
     
     // MARK: - BODY
@@ -56,11 +58,13 @@ struct ContentView: View {
                 } //: HSTACK
                 
                 // MARK: - SLOT MACHINE
+                
                 VStack(alignment: .center, spacing: 0) {
+                    
                     // MARK: - REEL #1
                     ZStack {
                         ReelView()
-                        Image("gfx-bell")
+                        Image(symbols[0])
                             .resizable()
                             .modifier(ImageModifier())
                     } //: ZSATCK
@@ -69,7 +73,7 @@ struct ContentView: View {
                         // MARK: - REEL #2
                         ZStack {
                             ReelView()
-                            Image("gfx-seven")
+                            Image(symbols[1])
                                 .resizable()
                                 .modifier(ImageModifier())
                         } //: ZSATCK
@@ -79,7 +83,7 @@ struct ContentView: View {
                         // MARK: - REEL #3
                         ZStack {
                             ReelView()
-                            Image("gfx-cherry")
+                            Image(symbols[4])
                                 .resizable()
                                 .modifier(ImageModifier())
                         } //: ZSATCK
