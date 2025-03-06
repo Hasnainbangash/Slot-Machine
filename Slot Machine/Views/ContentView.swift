@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var showingInfoView: Bool = false
     @State private var isActiveBet10: Bool = true
     @State private var isActiveBet20: Bool = false
-    @State private var showingModel: Bool = true
+    @State private var showingModel: Bool = false
     
     // MARK: - FUNCTIONS
     
@@ -51,7 +51,7 @@ struct ContentView: View {
             playerloses()
         }
     }
-
+    
     // PLAYER WINS
     func playerWins() {
         coins += betAmount * 10
@@ -268,6 +268,39 @@ struct ContentView: View {
                         Spacer()
                         
                         // MESSAGE
+                        VStack(alignment: .center, spacing: 16) {
+                            Image("gfx-seven-reel")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: 72)
+                            
+                            Text("Bad Luck! You lost all of the coins. \nLet's play again!")
+                                .font(.system(.body, design: .rounded))
+                                .lineLimit(2)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color.gray)
+                                .layoutPriority(1)
+                            
+                            Button(action: {
+                                self.showingModel = false
+                                self.coins = 100
+                            }) {
+                                Text("New Game".uppercased())
+                                    .font(.system(.body, design: .rounded))
+                                    .fontWeight(.semibold)
+                                    .accentColor(Color("ColorPink"))
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .frame(minWidth: 128)
+                                    .background(
+                                        Capsule()
+                                            .strokeBorder(lineWidth: 1.75)
+                                            .foregroundColor(Color("ColorPink"))
+                                    )
+                            }
+                        } //: VSTACK
+                        
+                        Spacer()
                     } //: VSTACK
                     .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 260, idealHeight: 280, maxHeight: 320, alignment: .center)
                     .background(Color.white)
