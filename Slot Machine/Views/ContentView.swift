@@ -80,6 +80,7 @@ struct ContentView: View {
         betAmount = 20
         isActiveBet20 = true
         isActiveBet10 = false
+        playSound(sound: "casino-chips", type: "mp3")
     }
     
     // ACTIVATE BET 10
@@ -87,6 +88,7 @@ struct ContentView: View {
         betAmount = 10
         isActiveBet10 = true
         isActiveBet20 = false
+        playSound(sound: "casino-chips", type: "mp3")
     }
     
     // GAME IS OVER
