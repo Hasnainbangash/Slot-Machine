@@ -77,3 +77,13 @@ struct BetCapsuleModifier: ViewModifier {
             )
     }
 }
+
+struct CasinoChipsModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .scaledToFit()
+            .frame(height: 64)
+            .animation(.default)
+            .modifier(ShadowModifier())
+    }
+}
