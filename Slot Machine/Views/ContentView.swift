@@ -69,12 +69,14 @@ struct ContentView: View {
         coins -= betAmount
     }
     
+    // ACTIVATE BET 20
     func activateBet20() {
         betAmount = 20
         isActiveBet20 = true
         isActiveBet10 = false
     }
     
+    // ACTIVATE BET 10
     func activateBet10() {
         betAmount = 10
         isActiveBet10 = true
@@ -87,6 +89,14 @@ struct ContentView: View {
             // SHOW MODAL WINDOW
             showingModel = true
         }
+    }
+    
+    // RESET GAME
+    func resetGame() {
+        UserDefaults.standard.set(0, forKey: "HighScore")
+        highscore = 0
+        coins = 100
+        activateBet10()
     }
     
     // MARK: - BODY
@@ -230,7 +240,7 @@ struct ContentView: View {
             .overlay(
                 // RESET
                 Button(action: {
-                    print("Reset the game")
+                    self.resetGame()
                 }) {
                     Image(systemName: "arrow.2.circlepath.circle")
                 } //: BUTTON
