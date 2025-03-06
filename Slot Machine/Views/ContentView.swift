@@ -12,6 +12,9 @@ struct ContentView: View {
     
     let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
     
+    @State private var highscore: Int = 0
+    @State private var coins: Int = 100
+    @State private var betAmount: Int = 10
     @State private var reels: Array = [0, 1, 2]
     @State private var showingInfoView: Bool = false
     
@@ -31,9 +34,15 @@ struct ContentView: View {
     }
     
     // CHECK THE WINNING
-    // PLAYER WINS
-    // NEW HIGHSCORE
-    // PLAYER LOSES
+    func checkWinning() {
+        if reels[0] == reels[1] && reels[1] == reels[2] && reels[0] == reels[2] {
+            // PLAYER WINS
+            // NEW HIGHSCORE
+        } else {
+            // PLAYER LOSES
+        }
+    }
+
     // GAME IS OVER
     
     // MARK: - BODY
@@ -115,6 +124,9 @@ struct ContentView: View {
                     Button(action: {
                         // SPIN THE REELS
                         self.spinReels()
+                        
+                        // CHECK WINNING
+                        self.checkWinning()
                     }) {
                         Image("gfx-spin")
                             .renderingMode(.original)
