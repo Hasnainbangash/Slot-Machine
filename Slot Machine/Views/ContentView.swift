@@ -96,6 +96,7 @@ struct ContentView: View {
         if coins <= 0 {
             // SHOW MODAL WINDOW
             showingModel = true
+            playSound(sound: "game-over", type: "mp3")
         }
     }
     
