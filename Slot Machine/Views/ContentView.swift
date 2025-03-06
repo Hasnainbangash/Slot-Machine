@@ -60,6 +60,8 @@ struct ContentView: View {
     // NEW HIGHSCORE
     func newHighScore() {
         highscore = coins
+        // Saving the high score value in the user defaults
+        UserDefaults.standard.set(highscore, forKey: "HighScore")
     }
     
     // PLAYER LOSES
