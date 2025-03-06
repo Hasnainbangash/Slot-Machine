@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var showingInfoView: Bool = false
     @State private var isActiveBet10: Bool = true
     @State private var isActiveBet20: Bool = false
-    @State private var showingModel: Bool = false
+    @State private var showingModel: Bool = true
     
     // MARK: - FUNCTIONS
     
@@ -250,6 +250,31 @@ struct ContentView: View {
             .blur(radius: $showingModel.wrappedValue ? 5 : 0, opaque: false)
             
             // MARK: - POPUP
+            if $showingModel.wrappedValue {
+                ZStack {
+                    Color("ColorTransparentBlack").edgesIgnoringSafeArea(.all)
+                    
+                    // MODAL
+                    VStack(spacing: 0) {
+                        // TITLE
+                        Text("GAME OVER")
+                            .font(.system(.title, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .background(Color("ColorPink"))
+                            .foregroundColor(Color.white)
+                        
+                        Spacer()
+                        
+                        // MESSAGE
+                    } //: VSTACK
+                    .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 260, idealHeight: 280, maxHeight: 320, alignment: .center)
+                    .background(Color.white)
+                    .cornerRadius(20)
+                    .shadow(color: Color("ColorTransparentBlack"), radius: 6, x: 0, y: 8)
+                } //: ZSTACK
+            }
         } //: ZSTACK
         .sheet(isPresented: $showingInfoView) {
             InfoView()
