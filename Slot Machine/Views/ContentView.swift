@@ -99,6 +99,29 @@ struct ContentView: View {
                 // MARK: - FOOTER
                 
                 Spacer()
+                
+                HStack {
+                    // MARK: - BET 20
+                    Button(action: {
+                        print("Bet 20 coins")
+                    }) {
+                        Text("20")
+                            .fontWeight(.heavy)
+                            .foregroundColor(Color.white)
+                            .font(.system(.title, design: .rounded))
+                            .padding(.vertical, 5)
+                            .frame(width: 90).shadow(color: Color("ColorTransparentBlack"), radius: 0, x: 0, y: 3)
+                    } //: BUTTON
+                    .background(
+                        Capsule()
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .top, endPoint: .bottom))
+                    )
+                    .padding(3)
+                    .background(
+                        Capsule()
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .bottom, endPoint: .top))
+                    )
+                } //: HSTACK
             } //: VSTACK
             .overlay(
                 // RESET
@@ -107,7 +130,7 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "arrow.2.circlepath.circle")
                 } //: BUTTON
-                .modifier(ButtonModifier())
+                    .modifier(ButtonModifier())
                 , alignment: .topLeading
             )
             .overlay(
@@ -117,7 +140,7 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "info.circle")
                 } //: BUTTON
-                .modifier(ButtonModifier())
+                    .modifier(ButtonModifier())
                 , alignment: .topTrailing
             )
             .padding()
