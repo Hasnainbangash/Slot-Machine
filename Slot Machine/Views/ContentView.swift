@@ -18,6 +18,18 @@ struct ContentView: View {
     // MARK: - FUNCTIONS
     
     // SPIN THE REELS
+    func spinReels() {
+        // Manual way to generate random numbers for each index
+        // reels[0] = Int.random(in: 0...symbols.count - 1)
+        // reels[1] = Int.random(in: 0...symbols.count - 1)
+        // reels[2] = Int.random(in: 0...symbols.count - 1)
+        
+        // Simple way to generate random numbers for each index
+        reels = reels.map { _ in
+            Int.random(in: 0..<symbols.count)
+        }
+    }
+    
     // CHECK THE WINNING
     // PLAYER WINS
     // NEW HIGHSCORE
@@ -101,7 +113,8 @@ struct ContentView: View {
                     
                     // MARK: - SPIN BUTTON
                     Button(action: {
-                        print("Spin the reels")
+                        // SPIN THE REELS
+                        self.spinReels()
                     }) {
                         Image("gfx-spin")
                             .renderingMode(.original)
