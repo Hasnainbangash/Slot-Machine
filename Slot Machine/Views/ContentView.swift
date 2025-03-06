@@ -20,6 +20,7 @@ struct ContentView: View {
     @State private var isActiveBet10: Bool = true
     @State private var isActiveBet20: Bool = false
     @State private var showingModel: Bool = false
+    @State private var animatingSymbol: Bool = false
     
     // MARK: - FUNCTIONS
     
@@ -152,6 +153,9 @@ struct ContentView: View {
                         Image(symbols[reels[0]])
                             .resizable()
                             .modifier(ImageModifier())
+                            .onAppear {
+                                self.animatingSymbol.toggle()
+                            }
                     } //: ZSATCK
                     
                     HStack(alignment: .center, spacing: 0) {
@@ -161,6 +165,9 @@ struct ContentView: View {
                             Image(symbols[reels[1]])
                                 .resizable()
                                 .modifier(ImageModifier())
+                                .onAppear {
+                                    self.animatingSymbol.toggle()
+                                }
                         } //: ZSATCK
                         
                         Spacer()
@@ -171,6 +178,9 @@ struct ContentView: View {
                             Image(symbols[reels[2]])
                                 .resizable()
                                 .modifier(ImageModifier())
+                                .onAppear {
+                                    self.animatingSymbol.toggle()
+                                }
                         } //: ZSATCK
                     } //: HSTACK
                     
