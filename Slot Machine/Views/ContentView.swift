@@ -242,6 +242,7 @@ struct ContentView: View {
                         
                         Image("gfx-casino-chips")
                             .resizable()
+                            .offset(x: isActiveBet20 ? 0 : 20)
                             .opacity(isActiveBet20 ? 1 : 0)
                             .modifier(CasinoChipsModifier())
                     } //: HSTACK
@@ -250,6 +251,7 @@ struct ContentView: View {
                     HStack(alignment: .center, spacing: 10) {
                         Image("gfx-casino-chips")
                             .resizable()
+                            .offset(x: isActiveBet10 ? 0 : -20)
                             .opacity(isActiveBet10 ? 1 : 0)
                             .modifier(CasinoChipsModifier())
                         
