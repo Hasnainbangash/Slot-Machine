@@ -248,6 +248,8 @@ struct ContentView: View {
                             .modifier(CasinoChipsModifier())
                     } //: HSTACK
                     
+                    Spacer()
+                    
                     // MARK: - BET 10
                     HStack(alignment: .center, spacing: 10) {
                         Image("gfx-casino-chips")
