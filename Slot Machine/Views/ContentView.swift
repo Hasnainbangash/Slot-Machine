@@ -68,7 +68,7 @@ struct ContentView: View {
                             .scoreLabelStyle()
                             .multilineTextAlignment(.trailing)
                         
-                        Text("100")
+                        Text("\(coins)")
                             .scoreNumberStyle()
                             .modifier(ScoreNumberModifier())
                     } //: HSTACK
@@ -77,7 +77,7 @@ struct ContentView: View {
                     Spacer()
                     
                     HStack {
-                        Text("200")
+                        Text("\(highscore)")
                             .scoreNumberStyle()
                             .modifier(ScoreNumberModifier())
                         
