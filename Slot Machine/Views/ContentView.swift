@@ -195,13 +195,23 @@ struct ContentView: View {
                     
                     // MARK: - SPIN BUTTON
                     Button(action: {
-                        // SPIN THE REELS
+                        // 1. SET THE DEFAULT STATE: NO ANIMATION
+                        withAnimation {
+                            self.animatingSymbol = false
+                        }
+                        
+                        // 2. SPIN THE REELS WITH CHANGING THE SYMBOL
                         self.spinReels()
                         
-                        // CHECK WINNING
+                        // 3. TRIGGER THE ANIMATIONS AFTER CHANGING THE SYMBOLS
+                        withAnimation {
+                            self.animatingSymbol = true
+                        }
+                        
+                        // 4. CHECK WINNING
                         self.checkWinning()
                         
-                        // GAME IS OVER
+                        // 5. GAME IS OVER
                         self.isGameOver()
                     }) {
                         Image("gfx-spin")
