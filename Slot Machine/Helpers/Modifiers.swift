@@ -62,3 +62,18 @@ struct BetNumberModifier: ViewModifier {
     }
 }
 
+struct BetCapsuleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(
+                Capsule()
+                    .fill(LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .top, endPoint: .bottom))
+            )
+            .padding(3)
+            .background(
+                Capsule()
+                    .fill(LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .bottom, endPoint: .top))
+                    .modifier(ShadowModifier())
+            )
+    }
+}
