@@ -12,7 +12,17 @@ struct ContentView: View {
     
     let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
     
+    @State private var reels: Array = [0, 1, 2]
     @State private var showingInfoView: Bool = false
+    
+    // MARK: - FUNCTIONS
+    
+    // SPIN THE REELS
+    // CHECK THE WINNING
+    // PLAYER WINS
+    // NEW HIGHSCORE
+    // PLAYER LOSES
+    // GAME IS OVER
     
     // MARK: - BODY
     
@@ -64,7 +74,7 @@ struct ContentView: View {
                     // MARK: - REEL #1
                     ZStack {
                         ReelView()
-                        Image(symbols[0])
+                        Image(symbols[reels[0]])
                             .resizable()
                             .modifier(ImageModifier())
                     } //: ZSATCK
@@ -73,7 +83,7 @@ struct ContentView: View {
                         // MARK: - REEL #2
                         ZStack {
                             ReelView()
-                            Image(symbols[1])
+                            Image(symbols[reels[1]])
                                 .resizable()
                                 .modifier(ImageModifier())
                         } //: ZSATCK
@@ -83,7 +93,7 @@ struct ContentView: View {
                         // MARK: - REEL #3
                         ZStack {
                             ReelView()
-                            Image(symbols[4])
+                            Image(symbols[reels[2]])
                                 .resizable()
                                 .modifier(ImageModifier())
                         } //: ZSATCK
