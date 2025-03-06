@@ -48,6 +48,8 @@ struct ContentView: View {
             // NEW HIGHSCORE
             if coins > highscore {
                 newHighScore()
+            } else {
+                playSound(sound: "win", type: "mp3")
             }
         } else {
             // PLAYER LOSES
@@ -65,6 +67,7 @@ struct ContentView: View {
         highscore = coins
         // Saving the high score value in the user defaults
         UserDefaults.standard.set(highscore, forKey: "HighScore")
+        playSound(sound: "high-score", type: "mp3")
     }
     
     // PLAYER LOSES
