@@ -45,6 +45,7 @@ struct ContentView: View {
             }
         } else {
             // PLAYER LOSES
+            playerloses()
         }
     }
 
@@ -56,6 +57,11 @@ struct ContentView: View {
     // NEW HIGHSCORE
     func newHighScore() {
         highscore = coins
+    }
+    
+    // PLAYER LOSES
+    func playerloses() {
+        coins -= betAmount
     }
     
     // GAME IS OVER
