@@ -21,6 +21,7 @@ struct ContentView: View {
     @State private var isActiveBet20: Bool = false
     @State private var showingModel: Bool = false
     @State private var animatingSymbol: Bool = false
+    @State private var animatingModel: Bool = false
     
     // MARK: - FUNCTIONS
     
@@ -326,6 +327,8 @@ struct ContentView: View {
                             
                             Button(action: {
                                 self.showingModel = false
+                                self.animatingModel = false
+                                self.activateBet10()
                                 self.coins = 100
                             }) {
                                 Text("New Game".uppercased())
@@ -349,6 +352,12 @@ struct ContentView: View {
                     .background(Color.white)
                     .cornerRadius(20)
                     .shadow(color: Color("ColorTransparentBlack"), radius: 6, x: 0, y: 8)
+                    .opacity($animatingModel.wrappedValue ? 1 : 0)
+                    .offset(y: $animatingModel.wrappedValue ? 0 : -100)
+                    .animation(Animation.spring(response: 0.6, dampingFraction: 1.0, blendDuration: 1.0))
+                    .onAppear {
+                        self.animatingModel = true
+                    }
                 } //: ZSTACK
             }
         } //: ZSTACK
