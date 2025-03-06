@@ -36,6 +36,7 @@ struct ContentView: View {
         reels = reels.map { _ in
             Int.random(in: 0..<symbols.count)
         }
+        playSound(sound: "spin", type: "mp3")
     }
     
     // CHECK THE WINNING
