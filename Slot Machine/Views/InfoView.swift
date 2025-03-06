@@ -10,6 +10,8 @@ import SwiftUI
 struct InfoView: View {
     // MARK: - PROPERTIES
     
+    @Environment(\.presentationMode) var presentationMode
+    
     // MARK: - BODY
     
     var body: some View {
@@ -36,6 +38,7 @@ struct InfoView: View {
         .overlay (
             Button(action: {
                 // Action
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image(systemName: "xmark.circle")
                     .font(.title)
