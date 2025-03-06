@@ -106,6 +106,7 @@ struct ContentView: View {
         highscore = 0
         coins = 100
         activateBet10()
+        playSound(sound: "chimeup", type: "mp3")
     }
     
     // MARK: - BODY
