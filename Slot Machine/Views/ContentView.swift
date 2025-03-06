@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var showingInfoView: Bool = false
     @State private var isActiveBet10: Bool = true
     @State private var isActiveBet20: Bool = false
+    @State private var showingModel: Bool = false
     
     // MARK: - FUNCTIONS
     
@@ -79,6 +80,12 @@ struct ContentView: View {
     }
     
     // GAME IS OVER
+    func isGameOver() {
+        if coins <= 0 {
+            // SHOW MODAL WINDOW
+            showingModel = true
+        }
+    }
     
     // MARK: - BODY
     
@@ -162,6 +169,9 @@ struct ContentView: View {
                         
                         // CHECK WINNING
                         self.checkWinning()
+                        
+                        // GAME IS OVER
+                        self.isGameOver()
                     }) {
                         Image("gfx-spin")
                             .renderingMode(.original)
