@@ -37,12 +37,19 @@ struct ContentView: View {
     func checkWinning() {
         if reels[0] == reels[1] && reels[1] == reels[2] && reels[0] == reels[2] {
             // PLAYER WINS
+            playerWins()
+            
             // NEW HIGHSCORE
         } else {
             // PLAYER LOSES
         }
     }
 
+    // PLAYER WINS
+    func playerWins() {
+        coins += betAmount * 10
+    }
+    
     // GAME IS OVER
     
     // MARK: - BODY
