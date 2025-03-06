@@ -11,6 +11,7 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     
     let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
+    let haptics = UINotificationFeedbackGenerator()
     
     @State private var highscore: Int = UserDefaults.standard.integer(forKey: "HighScore") // Getting the high score value from the user defaults
     @State private var coins: Int = 100
@@ -37,6 +38,7 @@ struct ContentView: View {
             Int.random(in: 0..<symbols.count)
         }
         playSound(sound: "spin", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     // CHECK THE WINNING
@@ -81,6 +83,7 @@ struct ContentView: View {
         isActiveBet20 = true
         isActiveBet10 = false
         playSound(sound: "casino-chips", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     // ACTIVATE BET 10
@@ -89,6 +92,7 @@ struct ContentView: View {
         isActiveBet10 = true
         isActiveBet20 = false
         playSound(sound: "casino-chips", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     // GAME IS OVER
